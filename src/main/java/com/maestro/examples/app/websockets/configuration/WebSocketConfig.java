@@ -1,4 +1,4 @@
-package com.maestro.examples.app.websockets.websockets;
+package com.maestro.examples.app.websockets.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

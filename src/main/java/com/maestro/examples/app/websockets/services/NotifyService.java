@@ -1,6 +1,6 @@
 package com.maestro.examples.app.websockets.services;
 
-import com.maestro.examples.app.websockets.websockets.OutputMessage;
+import com.maestro.examples.app.websockets.domain.OutputMessage;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.maestro.examples.app.websockets.controllers;
 
 import com.maestro.examples.app.websockets.services.NotifyService;
-import com.maestro.examples.app.websockets.websockets.OutputMessage;
+import com.maestro.examples.app.websockets.domain.OutputMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

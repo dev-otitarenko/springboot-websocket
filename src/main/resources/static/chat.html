@@ -14,7 +14,7 @@
 	        }
 	        
 	        function connect() {
-	            var socket = new SockJS('http://localhost:8080/websocket-app/chat');
+	            var socket = new SockJS('http://localhost:8810/websocket-app/chat');
 	            stompClient = Stomp.over(socket);
 
 	            stompClient.connect({}, function(frame) {
@@ -23,11 +23,13 @@
 	                stompClient.subscribe('/topic/messages', function(messageOutput) {
 	                    showMessageOutput(JSON.parse(messageOutput.body));
 	                });
-	            });
+	            }, function(error) {
+					alert("STOMP error " + error);
+				});
 	        }
 
 			// function connectWS() {
-			// 	var socket = new SockJS('/websocket-app/greeting');
+			// 	var socket = new SockJS('/websocket-app/path-to-messages');
 			// 	ws = Stomp.over(socket);
 			//
 			// 	ws.connect({}, function(frame) {
