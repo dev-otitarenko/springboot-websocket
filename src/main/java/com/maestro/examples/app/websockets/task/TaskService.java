@@ -3,6 +3,8 @@ package com.maestro.examples.app.websockets.task;
 import com.maestro.examples.app.websockets.domain.OutputMessage;
 import com.maestro.examples.app.websockets.services.NotifyService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import java.util.Date;
 
 @Slf4j
 @Service
+@EnableAsync
 public class TaskService {
     private final NotifyService notificationService;
 
@@ -18,6 +21,7 @@ public class TaskService {
         this.notificationService = notificationService;
     }
 
+    @Async
     @Scheduled(fixedRateString = "${app.job.rate}")
     public void sendTestMessages() {
         SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm:ss"),

@@ -14,7 +14,7 @@ public class ChatController {
     @MessageMapping("/chat")
     @SendTo("/topic/messages")
     public OutputMessage send(final InputMessage message) {
-        final String time = new SimpleDateFormat("HH:mm").format(new Date());
+        final String time = new SimpleDateFormat("HH:mm:ss").format(new Date());
         return new OutputMessage(message.getFrom(), message.getText(), time);
     }
 }
