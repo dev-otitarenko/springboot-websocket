@@ -5,7 +5,11 @@ import lombok.Getter;
 
 @Data
 @Getter
-public class Message {
+/*
+* Message received from users **/
+public class InputMessage {
+        // from user
     private String from;
+        // message
     private String text;
 }

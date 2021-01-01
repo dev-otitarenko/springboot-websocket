@@ -22,7 +22,6 @@ public class NotifyService {
      */
     public void notify(final OutputMessage notification, String username) {
         messagingTemplate.convertAndSendToUser(username, "/queue/notify", notification);
-        return;
     }
 
     /**
@@ -34,6 +33,5 @@ public class NotifyService {
      */
     public void notify(final OutputMessage notification) {
         messagingTemplate.convertAndSend("/topic/messages", notification);
-        return;
     }
 }
